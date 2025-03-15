@@ -57,7 +57,7 @@ jobs:
           username: ubuntu
           key: ${{ secrets.SSH_KEY }}
           script: |
-            cd ~/test_cicd
-            docker pull 4a61f4a542bf
+            cd /home/ubuntu/test_cicd
+            docker pull ghcr.io/sadscream/cloud-infrastructure-cicd:main
             docker compose restart
       
