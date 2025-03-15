@@ -48,6 +48,7 @@ jobs:
   
   deploy:
     runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: executing remote ssh commands using ssh key
         uses: appleboy/ssh-action@v1.2.2
@@ -55,4 +56,8 @@ jobs:
           host: ${{ secrets.SERVER_ADDRESS }}
           username: ubuntu
           key: ${{ secrets.SSH_KEY }}
-          script: whoami
+          script: |
+            cd ~/test_cicd \
+            docker pull 4a61f4a542bf \
+            docker compose restart
+      
