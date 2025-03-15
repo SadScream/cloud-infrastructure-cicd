@@ -7,5 +7,5 @@ app = Flask(__name__)
 
 @app.route("/")
 def index_page():
-    message = 'Добро пожаловать! version 3.0'
+    message = 'Добро пожаловать! version 4.0'
     return render_template('index.html', message=message)

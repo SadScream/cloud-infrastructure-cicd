@@ -58,6 +58,6 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd /home/ubuntu/test_cicd
-            docker pull ghcr.io/sadscream/cloud-infrastructure-cicd:main
-            docker compose restart
+            docker compose pull
+            docker compose up -d
       
